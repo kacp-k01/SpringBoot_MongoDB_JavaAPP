@@ -7,19 +7,17 @@ import lombok.extern.jackson.Jacksonized;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
-
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
 import java.util.List;
 
 @Data
 @Value
 @Jacksonized
-@Builder
+@Builder(toBuilder = true)
 @Document(collection = "kacperDB")
 public class Student {
-
-    @Id String id;
+    @Id
+    String id;
     String firstName;
     String lastName;
     @Indexed(unique = true)
@@ -28,5 +26,5 @@ public class Student {
     String country;
     List<String> favouriteSubjects;
     BigDecimal totalSpentInBooks;
-    LocalDateTime created;
+    String created;
 }
