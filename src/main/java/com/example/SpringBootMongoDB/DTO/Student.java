@@ -19,7 +19,8 @@ import java.util.List;
 @Document(collection = "kacperDB")
 public class Student {
 
-    @Id String id;
+    @Id
+    String id;
     String firstName;
     String lastName;
     @Indexed(unique = true)
